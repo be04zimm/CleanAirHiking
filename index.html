@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <title>Clean Air Hiking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+
+    <!-- Jquery Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Map (OpenLayers) Scripts -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+
+
+
+</head>
+<body>
+
+
+<!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Clean Air Hiking</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="privacy.html">Privacy</a>
+                    
+                  </div>
+                </div>
+              </nav>
+
+<!-- Start of container -->
+    <!-- Main Content     -->
+        <div class="container">
+                <div class="row Header">
+                    <div class="col-lg-11">
+                          
+                    </div>
+                </div>
+                <div class="row content">
+                    <div class="col-lg-12">
+
+                    <!-- Main area of start screen     -->
+                    <h1 class="splashheader">Find clean air hiking trails near you.</h1>
+
+                    <p class="pleaseshare">Share your location with us and we'll help you on your way. <button  id="modal-btn" class="btn btn-success" onclick="getLocation()"> Find trails near me!</button></p>
+
+
+                    <!-- <p id="userLocation"></p> -->
+
+                    <!-- Results Modal-->
+                    <div id="my-modal" class="modal">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          
+                          <h2>Top 10 Trails Nearest You</h2>
+                          <span class="close">&times;</span>
+                        </div>
+                        <div class="modal-body">
+                          <h3>You are Here:</h3>
+                          <div id="map" class="map"></div>
+                          
+
+                          </div>
+                          <table style="width: 90%; margin-left: auto; margin-right: auto;">
+                            <tbody>
+                            <tr>  
+                              <td> <strong>Air Quality Index (AQI)</strong></td>
+                            </tr>
+                            <tr>
+                            <td style="background-color: green; width: 16%;">&nbsp;</td>
+                            <td style="background-color: yellow; width: 16%;">&nbsp;</td>
+                            <td style="background-color: orange; width: 16%;">&nbsp;</td>
+                            <td style="background-color: red; width: 16%;">&nbsp;</td>
+                            <td style="background-color: purple; width: 16%;">&nbsp;</td>
+                            <td style="background-color: darkred; width: 16%;">&nbsp;</td>
+                            </tr>
+                             <tr>
+                            <td>Good 0–50</td>
+                            <td>Moderate 51–100</td>
+                            <td>Sensitive 101–150</td>
+                            <td>Unhealthy 151–200</td>
+                            <td>Very unhealthy 201–300</td>
+                            <td>Hazardous >300</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                        
+
+
+
+                            <!----- Beginning of Results Container/Table ---->
+                                    <div class="container">
+                                      
+                                      <h1 id="Tname"></h1>
+                                      <div id="div1"></div>
+                                      <table class="table">
+                                        <thead>
+                                          
+                                          <tr>
+                                            <!-- The scope attribute specifies that this is a header for a column -->
+                                            <th scope="col" id = "trails">Trails</th>
+                                            <th scope="col" id = "summary">Summary</th>
+                                            <th scope="col" id = "location">Location</th>
+											                      <th scope="col" id = "weather">AQI</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                      </tbody>
+                                      </table>
+                                    </div>
+                                    <!-------- End of results container ---->
+                                    
+                                    
+                                    
+                        <div class="modal-footer">
+                          <p id="userLocation"></p>
+                        </div>
+                      </div>
+                    </div>
+                      <!-- End Results Modal -->
+
+
+                    </div>
+                </div>
+
+    
+            </div>
+<!-- End of container -->
+
+
+
+<!-- Footer -->
+    <div class="footer">
+        <div class="col-lg-12"><p class="footertext">A web project brought to you by: Abby, Amir, Beth, & Zak</p></div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+    <script src="assets/javascript/app.js"></script>
+</body>
+</html>
+
